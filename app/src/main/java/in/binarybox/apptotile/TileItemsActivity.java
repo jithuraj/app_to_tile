@@ -30,7 +30,6 @@ public class TileItemsActivity extends AppCompatActivity {
     private ConstraintLayout item1Layout, item2Layout, item3Layout, item4Layout, item5Layout;
     private static final String SHARED_PREFERENCES_NAME = "tiles_data";
     private List<Boolean> enabledItems = new ArrayList<>();
-    private List<String> packageNames = new ArrayList<>();
     private SharedPreferences sharedPreferences;
     private ImageView ivAppIcon1, ivAppIcon2, ivAppIcon3, ivAppIcon4, ivAppIcon5;
     private List<ImageView> ivAppIcons = new ArrayList<>();
@@ -39,7 +38,8 @@ public class TileItemsActivity extends AppCompatActivity {
     private List<Animation> outAnimations = new ArrayList<>();
     private List<ProgressBar> progressBars = new ArrayList<>();
     private ProgressBar progressBar1, progressBar2, progressBar3, progressBar4, progressBar5;
-    private Boolean isOnResumeFirstTime = true;
+
+
 
 
     @Override
@@ -287,7 +287,19 @@ public class TileItemsActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        try {
+            super.onActivityResult(requestCode, resultCode, data);
 
+            if (requestCode == 1  && resultCode  == RESULT_OK) {
+                //back to this activity
+
+                setDatasToViewsFn();
+                turnOffProgressBarFn();
+            }
+        } catch (Exception ex) {
+            Toast.makeText(TileItemsActivity.this, ex.toString(),
+                    Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -295,28 +307,12 @@ public class TileItemsActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), ChooseAppsActivity.class);
         intent.putExtra("selectedItem", selectedItem);
-        startActivity(intent);
+        startActivityForResult(intent,1);
+
     }
 
     @Override
     protected void onResume() {
-
-        //check onResume is calling for the first time to prevent it from loading after onCreate.
-
-        if (isOnResumeFirstTime) {
-            //first time
-
-            isOnResumeFirstTime = false;
-
-        } else {
-            //not first time
-
-//            Log.i(TAG,"onResume called");
-
-            setDatasToViewsFn();
-            turnOffProgressBarFn();
-            isOnResumeFirstTime = true;
-        }
 
 
         super.onResume();

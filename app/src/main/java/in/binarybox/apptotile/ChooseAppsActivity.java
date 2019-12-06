@@ -35,7 +35,7 @@ public class ChooseAppsActivity extends AppCompatActivity {
 
 
 
-        recyclerViewAdapter=new RecyclerViewAdapter(appNamesList,appPackageNames,appIcons,getApplicationContext(),selectedItemFromIntent);
+        recyclerViewAdapter=new RecyclerViewAdapter(appNamesList,appPackageNames,appIcons,this,selectedItemFromIntent);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -55,5 +55,15 @@ public class ChooseAppsActivity extends AppCompatActivity {
         recyclerViewAdapter.notifyDataSetChanged();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = getIntent();
+        setResult(RESULT_OK, intent);
+        finish();
+
+        super.onBackPressed();
     }
 }

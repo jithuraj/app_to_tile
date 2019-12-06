@@ -19,31 +19,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.myViewHolder> {
 
     private List<String> appNamesList = new ArrayList<>();
     private List<String> appPackageNames = new ArrayList<>();
     private List<Drawable> appIcons = new ArrayList<>();
-    private Context context;
+    private Activity activity;
     private String TAG = "jithu";
     private static final String TILE_ITEM = "tileitem";
     private static final String SHARED_PREFERENCES_NAME = "tiles_data";
     private int selectedItemFromIntent;
 
-    public RecyclerViewAdapter(List<String> appNamesList, List<String> appPackageNames, List<Drawable> appIcons, Context context,int selectedItemFromIntent) {
+    public RecyclerViewAdapter(List<String> appNamesList, List<String> appPackageNames, List<Drawable> appIcons, Activity activity, int selectedItemFromIntent) {
         this.appNamesList = appNamesList;
         this.appPackageNames = appPackageNames;
-        this.context = context;
+        this.activity = activity;
         this.appIcons = appIcons;
-        this.selectedItemFromIntent=selectedItemFromIntent;
+        this.selectedItemFromIntent = selectedItemFromIntent;
     }
 
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.recycler_view_item, parent, false);
+        View view = LayoutInflater.from(activity).inflate(R.layout.recycler_view_item, parent, false);
 
         myViewHolder myViewHolder = new myViewHolder(view);
 
@@ -66,18 +68,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-
     private void saveDataToSharedPreferencesFn(int position) {
 
-        SharedPreferences sharedpreferences = context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sharedpreferences = activity.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putBoolean("item" + selectedItemFromIntent + "_active", true);
         editor.putString("item" + selectedItemFromIntent + "_package_name", "" + appPackageNames.get(position));
         editor.putString("item" + selectedItemFromIntent + "_app_name", "" + appNamesList.get(position));
         editor.commit();
 
+        goBackToPreviousActivityFn();
+    }
 
+    private void goBackToPreviousActivityFn() {
 
+        Intent intent = activity.getIntent();
+        activity. setResult(RESULT_OK, intent);
+        activity. finish();
     }
 
 
