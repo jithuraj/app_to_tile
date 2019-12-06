@@ -4,8 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:padding="8dp"
+    android:layout_margin="2dp"
     android:id="@+id/itemLayout"
+    android:background="@drawable/tile_items_item_bg"
     >
 
 
@@ -24,11 +26,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="20sp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toRightOf="@id/ivThumbnail"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
 
         />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

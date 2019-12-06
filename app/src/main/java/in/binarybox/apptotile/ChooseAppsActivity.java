@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class ChooseAppsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_apps);
 
+        Log.i(TAG,"loading");
 
         recyclerView=findViewById(R.id.recyclerView);
 
@@ -51,6 +53,9 @@ public class ChooseAppsActivity extends AppCompatActivity {
             appPackageNames.add(item.activityInfo.packageName);
             appIcons.add(item.loadIcon(this.getPackageManager()));
         }
+
+        Log.i(TAG,"completed");
+
 
         recyclerViewAdapter.notifyDataSetChanged();
 

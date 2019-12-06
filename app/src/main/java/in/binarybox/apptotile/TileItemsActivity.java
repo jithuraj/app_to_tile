@@ -24,6 +24,9 @@ import java.net.FileNameMap;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.binarybox.apptotile.tile.TileService1;
+import in.binarybox.apptotile.tile.TileService5;
+
 public class TileItemsActivity extends AppCompatActivity {
 
     private static final String TAG="jithu";
@@ -55,6 +58,11 @@ public class TileItemsActivity extends AppCompatActivity {
         setUpAnimationsFn();
         inAnimationsFn();
         onClickListenersFn();
+
+
+
+
+        //todo sort app names
 
     }
 
@@ -295,6 +303,8 @@ public class TileItemsActivity extends AppCompatActivity {
 
                 setDatasToViewsFn();
                 turnOffProgressBarFn();
+
+
             }
         } catch (Exception ex) {
             Toast.makeText(TileItemsActivity.this, ex.toString(),
