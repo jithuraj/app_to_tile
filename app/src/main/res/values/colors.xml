@@ -2,5 +2,9 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+    <!--    tile items      -->
+    <color name="tile_items_item_bg1">#03A9F4</color>
+
 </resources>

@@ -4,15 +4,296 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TileItemsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item1Layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/tile_items_margin"
+        android:background="@drawable/tile_items_item_bg"
+        android:padding="@dimen/tile_items_padding"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/ivIcon1"
+            android:layout_width="@dimen/tile_items_number_icon_size"
+            android:layout_height="@dimen/tile_items_number_icon_size"
+            android:src="@drawable/icon_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrow1"
+            android:layout_width="@dimen/tile_items_arrow_size"
+            android:layout_height="@dimen/tile_items_arrow_size"
+            android:src="@drawable/icon_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivIcon1"
+            app:layout_constraintRight_toLeftOf="@id/ivAppIcon1"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/ivAppIcon1"
+            android:layout_width="@dimen/tile_items_question_mark_size"
+            android:layout_height="@dimen/tile_items_question_mark_size"
+            android:src="@drawable/icon_question_mark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/ivIcon1"
+            app:layout_constraintRight_toRightOf="@id/ivIcon1"
+            app:layout_constraintTop_toTopOf="@id/ivIcon1"
+            app:layout_constraintBottom_toBottomOf="@id/ivIcon1"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item2Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/tile_items_margin"
+        android:background="@drawable/tile_items_item_bg"
+        android:padding="@dimen/tile_items_padding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item1Layout"
+        >
+
+        <ImageView
+            android:id="@+id/ivIcon2"
+            android:layout_width="@dimen/tile_items_number_icon_size"
+            android:layout_height="@dimen/tile_items_number_icon_size"
+            android:src="@drawable/icon_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrow2"
+            android:layout_width="@dimen/tile_items_arrow_size"
+            android:layout_height="@dimen/tile_items_arrow_size"
+            android:src="@drawable/icon_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivIcon2"
+            app:layout_constraintRight_toLeftOf="@id/ivAppIcon2"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/ivAppIcon2"
+            android:layout_width="@dimen/tile_items_question_mark_size"
+            android:layout_height="@dimen/tile_items_question_mark_size"
+            android:src="@drawable/icon_question_mark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/ivIcon2"
+            app:layout_constraintRight_toRightOf="@id/ivIcon2"
+            app:layout_constraintTop_toTopOf="@id/ivIcon2"
+            app:layout_constraintBottom_toBottomOf="@id/ivIcon2"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item3Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/tile_items_margin"
+        android:background="@drawable/tile_items_item_bg"
+        android:padding="@dimen/tile_items_padding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item2Layout"
+        >
+
+        <ImageView
+            android:id="@+id/ivIcon3"
+            android:layout_width="@dimen/tile_items_number_icon_size"
+            android:layout_height="@dimen/tile_items_number_icon_size"
+            android:src="@drawable/icon_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrow3"
+            android:layout_width="@dimen/tile_items_arrow_size"
+            android:layout_height="@dimen/tile_items_arrow_size"
+            android:src="@drawable/icon_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivIcon3"
+            app:layout_constraintRight_toLeftOf="@id/ivAppIcon3"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/ivAppIcon3"
+            android:layout_width="@dimen/tile_items_question_mark_size"
+            android:layout_height="@dimen/tile_items_question_mark_size"
+            android:src="@drawable/icon_question_mark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/ivIcon3"
+            app:layout_constraintRight_toRightOf="@id/ivIcon3"
+            app:layout_constraintTop_toTopOf="@id/ivIcon3"
+            app:layout_constraintBottom_toBottomOf="@id/ivIcon3"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item4Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/tile_items_margin"
+        android:background="@drawable/tile_items_item_bg"
+        android:padding="@dimen/tile_items_padding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item3Layout"
+        >
+
+        <ImageView
+            android:id="@+id/ivIcon4"
+            android:layout_width="@dimen/tile_items_number_icon_size"
+            android:layout_height="@dimen/tile_items_number_icon_size"
+            android:src="@drawable/icon_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrow4"
+            android:layout_width="@dimen/tile_items_arrow_size"
+            android:layout_height="@dimen/tile_items_arrow_size"
+            android:src="@drawable/icon_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivIcon4"
+            app:layout_constraintRight_toLeftOf="@id/ivAppIcon4"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/ivAppIcon4"
+            android:layout_width="@dimen/tile_items_question_mark_size"
+            android:layout_height="@dimen/tile_items_question_mark_size"
+            android:src="@drawable/icon_question_mark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/ivIcon4"
+            app:layout_constraintRight_toRightOf="@id/ivIcon4"
+            app:layout_constraintTop_toTopOf="@id/ivIcon4"
+            app:layout_constraintBottom_toBottomOf="@id/ivIcon4"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item5Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/tile_items_margin"
+        android:background="@drawable/tile_items_item_bg"
+        android:padding="@dimen/tile_items_padding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item4Layout"
+        >
+
+        <ImageView
+            android:id="@+id/ivIcon5"
+            android:layout_width="@dimen/tile_items_number_icon_size"
+            android:layout_height="@dimen/tile_items_number_icon_size"
+            android:src="@drawable/icon_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrow5"
+            android:layout_width="@dimen/tile_items_arrow_size"
+            android:layout_height="@dimen/tile_items_arrow_size"
+            android:src="@drawable/icon_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivIcon5"
+            app:layout_constraintRight_toLeftOf="@id/ivAppIcon5"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/ivAppIcon5"
+            android:layout_width="@dimen/tile_items_question_mark_size"
+            android:layout_height="@dimen/tile_items_question_mark_size"
+            android:src="@drawable/icon_question_mark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <ProgressBar
+            android:id="@+id/progressBar5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/ivIcon5"
+            app:layout_constraintRight_toRightOf="@id/ivIcon5"
+            app:layout_constraintTop_toTopOf="@id/ivIcon5"
+            app:layout_constraintBottom_toBottomOf="@id/ivIcon5"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

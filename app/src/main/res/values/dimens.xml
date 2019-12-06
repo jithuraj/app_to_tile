@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tile_items_number_icon_size">50dp</dimen>
+    <dimen name="tile_items_arrow_size">40dp</dimen>
+    <dimen name="tile_items_question_mark_size">50dp</dimen>
+    <dimen name="tile_items_padding">8dp</dimen>
+    <dimen name="tile_items_item_corner_radius">15dp</dimen>
+    <dimen name="tile_items_margin">8dp</dimen>
+</resources>
