@@ -264,11 +264,11 @@ public class TileItemsActivity extends AppCompatActivity {
     private void getDataFromSharedPreferencesFn() {
 
 
-        enabledItems.add(sharedPreferences.getBoolean("item1_active", false));
-        enabledItems.add(sharedPreferences.getBoolean("item2_active", false));
-        enabledItems.add(sharedPreferences.getBoolean("item3_active", false));
-        enabledItems.add(sharedPreferences.getBoolean("item4_active", false));
-        enabledItems.add(sharedPreferences.getBoolean("item5_active", false));
+        enabledItems.add(sharedPreferences.getBoolean("item1_active", true));
+        enabledItems.add(sharedPreferences.getBoolean("item2_active", true));
+        enabledItems.add(sharedPreferences.getBoolean("item3_active", true));
+        enabledItems.add(sharedPreferences.getBoolean("item4_active", true));
+        enabledItems.add(sharedPreferences.getBoolean("item5_active", true));
 
         setDatasToViewsFn();
 
